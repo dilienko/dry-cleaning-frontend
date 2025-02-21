@@ -1,0 +1,43 @@
+<div class="login-container">
+  <mat-card class="app-card">
+    <mat-card-title class="app-card__title">Вхід</mat-card-title>
+    <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+      <mat-form-field appearance="outline" class="full-width">
+        <mat-label>Логін</mat-label>
+        <input matInput formControlName="username" required />
+        <mat-error
+          *ngIf="
+            loginForm.get('username')?.invalid &&
+            loginForm.get('username')?.touched
+          "
+        >
+          Введіть логін
+        </mat-error>
+      </mat-form-field>
+
+      <mat-form-field appearance="outline" class="full-width">
+        <mat-label>Пароль</mat-label>
+        <input matInput type="password" formControlName="password" required />
+        <mat-error
+          *ngIf="
+            loginForm.get('password')?.invalid &&
+            loginForm.get('password')?.touched
+          "
+        >
+          Введіть пароль
+        </mat-error>
+      </mat-form-field>
+
+      <button
+        mat-raised-button
+        color="primary"
+        class="full-width"
+        type="submit"
+        [disabled]="loginForm.invalid"
+      >
+        Увійти
+      </button>
+    </form>
+    <p *ngIf="errorMessage" class="error">{{ errorMessage }}</p>
+  </mat-card>
+</div>
