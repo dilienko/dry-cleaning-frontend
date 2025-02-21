@@ -1,4 +1,4 @@
-/* You can add global styles to this file, and also import other style files */
+@use "@angular/material" as mat;
 
 html,
 body {
@@ -7,4 +7,55 @@ body {
 body {
   margin: 0;
   font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+$BACKGROUND_COLOR: rgb(100, 206, 241);
+
+.app-container,
+.login-container {
+  width: 100%;
+  max-width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: $BACKGROUND_COLOR;
+}
+
+.app-container {
+  min-height: calc(100% - 60px);
+}
+
+.login-container {
+  height: 100%;
+}
+
+.app-card {
+  max-width: 95%;
+  margin: 20px 15px;
+  padding: 20px;
+  text-align: center;
+  &__title {
+    margin-bottom: 15px;
+    font-weight: bold;
+  }
+  &__size_small {
+    width: 400px;
+  }
+  &__size_large {
+    width: 1000px;
+  }
+  &__flex_centered {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+:root {
+  @include mat.button-overrides(
+    (
+      filled-container-color: rgb(98, 86, 230),
+    )
+  );
 }
