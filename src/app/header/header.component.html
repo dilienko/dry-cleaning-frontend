@@ -1,0 +1,34 @@
+<mat-toolbar color="primary" *ngIf="isAuthenticated()" class="header">
+  <div class="header__type_desktop">
+    <span class="logo" (click)="redirectTo([''])">EcoClean</span>
+    <span
+      class="header__link"
+      *ngFor="let link of links"
+      (click)="redirectTo(link.path)"
+      >{{ link.text }}</span
+    >
+  </div>
+  <div class="header__type_mobile">
+    <div class="header__wrapper">
+      <button
+        mat-icon-button
+        class="example-icon"
+        aria-label="Menu"
+        [matMenuTriggerFor]="menu"
+      >
+        <mat-icon>menu</mat-icon>
+      </button>
+      <mat-menu #menu="matMenu">
+        <button
+          mat-menu-item
+          *ngFor="let link of links"
+          (click)="redirectTo(link.path)"
+        >
+          {{ link.text }}
+        </button>
+      </mat-menu>
+    </div>
+  </div>
+  <span class="logo_mobile" (click)="redirectTo([''])">EcoClean</span>
+  <button mat-flat-button (click)="logout()">Вийти</button>
+</mat-toolbar>

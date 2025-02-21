@@ -1,5 +1,5 @@
 <div class="login-container">
-  <mat-card class="app-card">
+  <mat-card class="app-card app-card__size_small">
     <mat-card-title class="app-card__title">Вхід</mat-card-title>
     <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
       <mat-form-field appearance="outline" class="full-width">
@@ -38,6 +38,6 @@
         Увійти
       </button>
     </form>
-    <p *ngIf="errorMessage" class="error">{{ errorMessage }}</p>
+    <p *ngIf="errorMessage" class="app-card__error">{{ errorMessage }}</p>
   </mat-card>
 </div>

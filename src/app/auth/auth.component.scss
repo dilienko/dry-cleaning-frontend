@@ -1,25 +1,3 @@
-$BACKGROUND_COLOR: rgb(100, 206, 241);
-
-.login-container {
-  width: 100%;
-  height: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: $BACKGROUND_COLOR;
-}
-
-.app-card {
-  width: 400px;
-  margin: 0px 15px;
-  padding: 20px;
-  text-align: center;
-  &__title {
-    margin-bottom: 15px;
-    font-weight: bold;
-  }
-}
-
 mat-form-field {
   width: 100%;
   margin-bottom: 16px;
