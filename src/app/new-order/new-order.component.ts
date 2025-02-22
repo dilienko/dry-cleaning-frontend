@@ -57,7 +57,7 @@ export class NewOrderComponent {
     this.clientService.getClient(client).subscribe({
       next: (res) => {
         this.currentClient.setClient(res, branch);
-        this.router.navigate(['new-order/services']);
+        this.router.navigate(['/services']);
       },
       error: (res) => {
         this.errorMessage = res.error.message;

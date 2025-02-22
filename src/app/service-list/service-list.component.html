@@ -1,1 +1,52 @@
-<p>service-list works!</p>
+<div class="app-container">
+  <mat-card class="app-card app-card__size_large app-card__flex_centered">
+    <app-client-info
+      class="app-card app-card__size_large app-card__flex_centered"
+    ></app-client-info>
+    <mat-card-title class="app-card__title">Оберіть послуги</mat-card-title>
+
+    <mat-accordion class="app-card app-card__flex_centered">
+      <mat-expansion-panel
+        hideToggle
+        class="app-card app-card__size_medium"
+        *ngFor="let type of getTypes()"
+      >
+        <mat-expansion-panel-header>{{ type }}</mat-expansion-panel-header>
+        <section *ngFor="let position of getPositions(type)">
+          <mat-label class="service-name">{{ position.name }}</mat-label>
+          <mat-label class="service-price">{{
+            position.price + " грн"
+          }}</mat-label>
+          <mat-checkbox
+            class="service-checked"
+            (change)="
+              changeSelectedServices($event.checked, position['_id'], position)
+            "
+          ></mat-checkbox>
+        </section>
+      </mat-expansion-panel>
+    </mat-accordion>
+
+    <div class="form__buttons">
+      <button
+        mat-raised-button
+        type="button"
+        color="warn"
+        class="full-width"
+        (click)="returnToPrevious()"
+      >
+        Повернутися
+      </button>
+      <button
+        mat-raised-button
+        color="primary"
+        class="full-width"
+        type="button"
+        (click)="onSubmit()"
+      >
+        Далі
+      </button>
+    </div>
+    <p *ngIf="errorMessage" class="app-card__error">{{ errorMessage }}</p>
+  </mat-card>
+</div>

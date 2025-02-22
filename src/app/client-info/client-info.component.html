@@ -1,0 +1,15 @@
+<mat-card
+  class="app-card app-card__size_large app-card__border app-card__flex_centered"
+>
+  <mat-card-header>
+    <mat-card-title>
+      {{ client.surname + " " + client.firstName + " " + client.middleName }}
+    </mat-card-title>
+    <mat-card-subtitle
+      *ngIf="client.isRegular"
+      class="header__subtitle_color_gold"
+    >
+      Постійний клієнт &#9733;
+    </mat-card-subtitle>
+  </mat-card-header>
+</mat-card>

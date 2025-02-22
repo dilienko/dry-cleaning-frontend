@@ -1,0 +1,17 @@
+mat-expansion-panel section {
+  width: 99%;
+  height: auto;
+  border-top: 1px solid black;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.service-name {
+  width: 27%;
+}
+
+.service-price {
+  width: 20%;
+}
