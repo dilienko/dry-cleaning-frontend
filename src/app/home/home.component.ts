@@ -13,6 +13,6 @@ export class HomeComponent {
   constructor(private router: Router) {}
 
   public createOrder() {
-    this.router.navigate(['/newOrder']);
+    this.router.navigate(['/new-order']);
   }
 }

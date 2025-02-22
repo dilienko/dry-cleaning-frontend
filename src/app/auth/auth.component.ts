@@ -37,7 +37,7 @@ export class AuthComponent {
     private router: Router,
     private authGuard: AuthGuard
   ) {
-    if (authGuard.canActivate()) this.router.navigate(['']);
+    if (this.authGuard.canActivate()) this.router.navigate(['']);
     this.loginForm = this.fb.group({
       username: ['', Validators.required],
       password: ['', Validators.required],
@@ -54,8 +54,6 @@ export class AuthComponent {
         this.errorMessage = '';
       },
       error: (res) => {
-        console.log();
-
         this.errorMessage = res.error.message;
       },
     });

@@ -1,0 +1,81 @@
+<div class="app-container">
+  <mat-card class="app-card app-card__size_small">
+    <mat-card-title class="app-card__title">Нове замовлення</mat-card-title>
+    <form [formGroup]="orderForm" (ngSubmit)="onSubmit()">
+      <mat-form-field appearance="outline" class="full-width">
+        <mat-label>Прізвище</mat-label>
+        <input matInput type="name" formControlName="surname" required />
+        <mat-error
+          *ngIf="
+            orderForm.get('surname')?.invalid &&
+            orderForm.get('surname')?.touched
+          "
+        >
+          Введіть прізвище
+        </mat-error>
+      </mat-form-field>
+
+      <mat-form-field appearance="outline" class="full-width">
+        <mat-label>Імʼя</mat-label>
+        <input matInput type="name" formControlName="firstName" required />
+        <mat-error
+          *ngIf="
+            orderForm.get('firstName')?.invalid &&
+            orderForm.get('firstName')?.touched
+          "
+        >
+          Введіть імʼя
+        </mat-error>
+      </mat-form-field>
+
+      <mat-form-field appearance="outline" class="full-width">
+        <mat-label>По батькові</mat-label>
+        <input matInput type="name" formControlName="middleName" required />
+        <mat-error
+          *ngIf="
+            orderForm.get('middleName')?.invalid &&
+            orderForm.get('middleName')?.touched
+          "
+        >
+          Введіть по батькові
+        </mat-error>
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>Філія</mat-label>
+        <mat-select formControlName="branch" required>
+          <mat-option value="obolon">Оболонь</mat-option>
+          <mat-option value="pozniaky">Позняки</mat-option>
+          <mat-option value="lybidska">Либідська</mat-option>
+        </mat-select>
+        <mat-error
+          *ngIf="
+            orderForm.get('branch')?.invalid && orderForm.get('branch')?.touched
+          "
+        >
+          Оберіть філію
+        </mat-error>
+      </mat-form-field>
+      <div class="form__buttons">
+        <button
+          mat-raised-button
+          type="button"
+          color="warn"
+          class="full-width"
+          (click)="returnToPrevious()"
+        >
+          Скасувати
+        </button>
+        <button
+          mat-raised-button
+          color="primary"
+          class="full-width"
+          type="submit"
+          [disabled]="orderForm.invalid"
+        >
+          Далі
+        </button>
+      </div>
+    </form>
+    <p *ngIf="errorMessage" class="app-card__error">{{ errorMessage }}</p>
+  </mat-card>
+</div>

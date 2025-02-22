@@ -6,6 +6,7 @@ body {
 }
 body {
   margin: 0;
+  box-sizing: border-box;
   font-family: Roboto, "Helvetica Neue", sans-serif;
 }
 
@@ -34,10 +35,6 @@ $BACKGROUND_COLOR: rgb(100, 206, 241);
   margin: 20px 15px;
   padding: 20px;
   text-align: center;
-  &__title {
-    margin-bottom: 15px;
-    font-weight: bold;
-  }
   &__size_small {
     width: 400px;
   }
@@ -58,4 +55,33 @@ $BACKGROUND_COLOR: rgb(100, 206, 241);
       filled-container-color: rgb(98, 86, 230),
     )
   );
+}
+
+:root {
+  @include mat.select-overrides(
+    (
+      panel-background-color: rgb(255, 255, 255),
+    )
+  );
+}
+
+.form__buttons {
+  margin: 10px 0px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+}
+
+button.mat-warn {
+  color: red !important;
+}
+
+button.mat-primary {
+  color: rgb(9, 136, 47) !important;
+}
+
+.app-card__title {
+  font-size: 20px !important;
+  margin-bottom: 10px !important;
 }
