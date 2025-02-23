@@ -5,6 +5,7 @@ import { AuthGuard } from './auth/auth.guard';
 import { NewOrderComponent } from './new-order/new-order.component';
 import { ServiceListComponent } from './service-list/service-list.component';
 import { CheckoutComponent } from './checkout/checkout.component';
+import { StatusListComponent } from './status-list/status-list.component';
 
 export const routes: Routes = [
   { path: '', component: HomeComponent, canActivate: [AuthGuard] },
@@ -22,6 +23,11 @@ export const routes: Routes = [
   {
     path: 'checkout',
     component: CheckoutComponent,
+    canActivate: [AuthGuard],
+  },
+  {
+    path: 'status',
+    component: StatusListComponent,
     canActivate: [AuthGuard],
   },
 

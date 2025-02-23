@@ -1,0 +1,73 @@
+.order-In {
+  background-color: rgb(255, 167, 2);
+}
+
+.order-Received {
+  background-color: rgb(207, 38, 38);
+  color: white;
+}
+
+.order-Done {
+  background-color: rgb(115, 230, 115);
+}
+
+.order-Returned {
+  background-color: rgb(21, 116, 21);
+  color: white;
+  mat-select {
+    color: white !important;
+  }
+  mat-label {
+    color: white !important;
+  }
+}
+
+.order__number {
+  width: 100%;
+  font-weight: 800;
+  font-size: 16px;
+  text-align: start;
+  margin: 10px;
+}
+
+.order__info {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 15px;
+}
+
+.order__info-client {
+  font-weight: 700;
+  width: 15%;
+  margin: 0 5px;
+}
+
+.order__info-cervices {
+  width: 35%;
+}
+
+.order__info-btn {
+  max-width: 35% !important;
+}
+
+mat-spinner {
+  width: 35px !important;
+}
+
+.order__header {
+  font-size: 20px;
+  font-weight: 800;
+  text-align: center;
+  margin: 7px 0;
+}
+
+.order__return-date {
+  width: 100%;
+  text-align: start;
+  font-weight: 800;
+  font-size: 15px;
+  margin: 5px 0;
+}

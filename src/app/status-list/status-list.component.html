@@ -1,0 +1,49 @@
+<app-select-branch>
+  <mat-spinner *ngIf="isLoading"></mat-spinner>
+  <div *ngIf="orders.length === 0" class="order__header">
+    Не знайдено жодного замовлення
+  </div>
+  <div *ngIf="orders.length !== 0" class="order__header">
+    Сторінка керування замовленнями
+  </div>
+  <mat-card
+    *ngFor="let order of orders"
+    class="app-card app-card__size_large app-card__flex_centered order-{{
+      order.status
+    }}"
+  >
+    <div class="order__number">Замовлення: {{ order._id }}</div>
+    <div class="order__info">
+      <span class="order__info-client"
+        >{{
+          order.client.surname +
+            " " +
+            order.client.firstName[0] +
+            ". " +
+            order.client.middleName[0]
+        }}.</span
+      >
+      <span class="order__info-cervices">{{
+        toStringServices(order.serviceType)
+      }}</span>
+      <mat-form-field class="order__info-btn">
+        <mat-label>Статус</mat-label>
+        <mat-select
+          required
+          [value]="order.status"
+          [disabled]="checkReturned(order.status)"
+          (selectionChange)="changeStatus($event.value, order._id)"
+        >
+          <mat-option
+            *ngFor="let status of allStatuses"
+            [value]="status.value"
+            >{{ status.title }}</mat-option
+          >
+        </mat-select>
+      </mat-form-field>
+    </div>
+    <div class="order__return-date" *ngIf="order.returnDate">
+      Повернено замовнику {{ transformDate(order.returnDate) }}
+    </div>
+  </mat-card>
+</app-select-branch>

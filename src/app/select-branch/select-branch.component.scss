@@ -1,0 +1,20 @@
+.app-card__flex_centered-start {
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: center;
+}
+
+.app-card__select {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: baseline;
+  border: 1px solid rgb(98, 86, 230);
+}
+
+.app-card__select-title {
+  font-size: 22px;
+  font-weight: 900;
+  vertical-align: middle;
+}

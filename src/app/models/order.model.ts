@@ -3,6 +3,7 @@ import { status } from './dryCleaning.model';
 import { IServiceType } from './serviceType.model';
 
 export interface IOrder {
+  _id?: string;
   serviceType: IServiceType[];
   client: IClient;
   receivedDate: Date;

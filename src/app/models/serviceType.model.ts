@@ -4,8 +4,3 @@ export interface IServiceType {
   type: string;
   price: number;
 }
-
-export interface IServiceTypeSelected extends IServiceType {
-  selected: boolean;
-  quantity: number;
-}

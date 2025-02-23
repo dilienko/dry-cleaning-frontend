@@ -1,0 +1,21 @@
+<div class="app-container">
+  <mat-card class="app-card app-card__size_large app-card__flex_centered-start">
+    <mat-card class="app-card app-card__size_large app-card__select">
+      <mat-card-title class="app-card__select-title"
+        >Оберіть філію:</mat-card-title
+      >
+
+      <mat-form-field appearance="outline">
+        <mat-label>Філія</mat-label>
+        <mat-select required value="" (selectionChange)="changeValue($event)">
+          <mat-option
+            *ngFor="let branch of allBranches"
+            [value]="branch.value"
+            >{{ branch.title }}</mat-option
+          >
+        </mat-select>
+      </mat-form-field>
+    </mat-card>
+    <ng-content></ng-content>
+  </mat-card>
+</div>
