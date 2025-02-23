@@ -30,7 +30,6 @@ export class HeaderComponent {
   public links: NavLink[] = [
     { text: 'Нове замовлення', path: ['/new-order'] },
     { text: 'Статус замовлень', path: ['/status'] },
-    { text: 'Повернення замовлення', path: ['/returnOrder'] },
     { text: 'Статистика', path: ['/stats'] },
   ];
 

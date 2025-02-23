@@ -29,6 +29,11 @@ $BACKGROUND_COLOR: rgb(100, 206, 241);
 .login-container {
   height: 100%;
 }
+.app-card__title {
+  font-size: 22px !important;
+  font-weight: bold;
+  margin-bottom: 15px !important;
+}
 
 .app-card {
   max-width: 95%;
@@ -88,12 +93,6 @@ button.mat-warn {
 
 button.mat-primary {
   color: rgb(9, 136, 47) !important;
-}
-
-.app-card__title {
-  font-size: 24px !important;
-  font-weight: bold;
-  margin-bottom: 7px !important;
 }
 
 .app-card__error {

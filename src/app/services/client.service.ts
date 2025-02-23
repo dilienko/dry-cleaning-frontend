@@ -19,7 +19,7 @@ export class ClientService {
   }
 
   public getClient(client: IClient): Observable<IClient> | Observable<object> {
-    return this.http.get(`${apiUrl}/api/clients`, {
+    return this.http.get(`${apiUrl}/api/client`, {
       params: { ...client },
       headers: this.baseHeader,
     });
