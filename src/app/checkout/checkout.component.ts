@@ -62,7 +62,7 @@ export class CheckoutComponent implements OnInit {
       0
     );
     if (!this.regularClient) return sum;
-    return sum * (1 - this.DISCOUNT / 100);
+    return Math.round(sum * (1 - this.DISCOUNT / 100));
   }
 
   recalculateSum(checked: boolean, value: string) {
