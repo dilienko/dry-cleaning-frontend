@@ -4,6 +4,7 @@ import { HomeComponent } from './home/home.component';
 import { AuthGuard } from './auth/auth.guard';
 import { NewOrderComponent } from './new-order/new-order.component';
 import { ServiceListComponent } from './service-list/service-list.component';
+import { CheckoutComponent } from './checkout/checkout.component';
 
 export const routes: Routes = [
   { path: '', component: HomeComponent, canActivate: [AuthGuard] },
@@ -16,6 +17,11 @@ export const routes: Routes = [
   {
     path: 'services',
     component: ServiceListComponent,
+    canActivate: [AuthGuard],
+  },
+  {
+    path: 'checkout',
+    component: CheckoutComponent,
     canActivate: [AuthGuard],
   },
 

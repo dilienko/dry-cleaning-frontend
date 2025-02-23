@@ -98,7 +98,7 @@ export class ServiceListComponent implements OnInit {
       setTimeout(() => (this.errorMessage = ''), 5000);
     } else {
       this.currentClient.setServices(this.selectedServices);
-      this.router.navigate(['']);
+      this.router.navigate(['checkout']);
     }
   }
 }

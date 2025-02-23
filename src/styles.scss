@@ -67,18 +67,15 @@ $BACKGROUND_COLOR: rgb(100, 206, 241);
       filled-container-color: rgb(98, 86, 230),
     )
   );
-}
-
-:root {
-  @include mat.select-overrides(
+  @include mat.progress-spinner-overrides(
     (
-      panel-background-color: rgb(255, 255, 255),
+      size: 40px,
     )
   );
 }
 
 .form__buttons {
-  margin: 10px 0px;
+  margin: 10px 5px;
   display: flex;
   flex-direction: row;
   justify-content: space-around;

@@ -1,0 +1,71 @@
+<div class="app-container">
+  <mat-card class="app-card app-card__size_large app-card__flex_centered">
+    <app-client-info
+      class="app-card app-card__size_large app-card__flex_centered"
+    ></app-client-info>
+    <mat-card-title class="app-card__title"
+      >Підтвердження замовлення</mat-card-title
+    >
+    <mat-card
+      class="app-card app-card__size_medium app-card__flex_centered app-card__type-checkout"
+    >
+      <div
+        class="app-card__order-element app-card__order-element_border"
+        *ngFor="let service of selectedServices"
+      >
+        <span class="app-card__order-name">{{ service.name }}</span>
+        <span>{{ service.price + " грн" }}</span>
+      </div>
+    </mat-card>
+    <mat-card
+      class="app-card app-card__size_medium app-card__flex_centered app-card__type-checkout"
+    >
+      <mat-card-subtitle>Додаткові опції</mat-card-subtitle>
+      <div class="checkbox-wrapper">
+        <mat-checkbox
+          class="service-checked"
+          (change)="recalculateSum($event.checked, 'specialWash')"
+          >Складне виведення плям (+10 відсотків до вартості)</mat-checkbox
+        >
+        <mat-checkbox
+          class="service-checked"
+          (change)="recalculateSum($event.checked, 'urgency')"
+          >Хімчистка за 1 день (+ 15 відсотків до вартості)</mat-checkbox
+        >
+      </div>
+    </mat-card>
+
+    <mat-card
+      class="app-card app-card__size_medium app-card__flex_centered app-card__type-checkout"
+    >
+      <div class="app-card__order-element">
+        <span>Загальна сума</span>
+        <span>{{ currentSum ? currentSum : initialSum + " грн" }}</span>
+      </div>
+    </mat-card>
+
+    <div class="form__buttons">
+      <button
+        mat-raised-button
+        type="button"
+        color="warn"
+        class="full-width"
+        (click)="back()"
+      >
+        Скасувати
+      </button>
+
+      <button
+        *ngIf="!isLoading"
+        mat-raised-button
+        color="primary"
+        class="full-width"
+        type="button"
+        (click)="onSubmit()"
+      >
+        Підтвердити
+      </button>
+      <mat-spinner *ngIf="isLoading"></mat-spinner>
+    </div>
+  </mat-card>
+</div>

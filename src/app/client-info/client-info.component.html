@@ -5,9 +5,10 @@
     <mat-card-title>
       {{ client.surname + " " + client.firstName + " " + client.middleName }}
     </mat-card-title>
+    <mat-card-subtitle>{{ "Кількість візитів: " + visits }}</mat-card-subtitle>
     <mat-card-subtitle
       *ngIf="client.isRegular"
-      class="header__subtitle_color_gold"
+      class="header__subtitle header__subtitle_color_gold"
     >
       Постійний клієнт &#9733;
     </mat-card-subtitle>
